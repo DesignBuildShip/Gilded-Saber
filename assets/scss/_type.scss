@@ -37,7 +37,7 @@ a{
 // ----------
 
 %headings{
-  font-family: $sans;
+  // font-family: $sans;
 
   a &{
     color: $black;
@@ -51,23 +51,23 @@ a{
 
 h1{
   @extend %headings;
-  @include ktype(6,1,1);
+  @include ktype(2,1,0);
 }
 h2{
   @extend %headings;
-  @include ktype(5,2,1);
+  @include ktype(1,1,0);
 }
 h3{
   @extend %headings;
-  @include ktype(4,2,1);
+  @include ktype(1,2,1);
 }
 h4{
   @extend %headings;
-  @include ktype(3,2,1);
+  @include ktype(0,1,1);
 }
 h5{
   @extend %headings;
-  @include ktype(1,2,1);
+  @include ktype(0,1,1);
 }
 h6{
   @extend %headings;
