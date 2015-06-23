@@ -1,0 +1,25 @@
+// Elements
+// ==========
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+hr{
+  height: 0;
+  border: 2px solid $gray-light;
+  margin: kunit(2) 0;
+}
+
+embed, iframe, .fluid-width-video-wrapper{
+  margin: kunit(1) 0;
+}
+
+// Account for fitvid
+.fluid-width-video-wrapper{
+  iframe{
+    margin: 0;
+  }
+}
