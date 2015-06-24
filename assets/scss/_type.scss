@@ -37,7 +37,7 @@ a{
 // ----------
 
 %headings{
-
+  font-weight: 500;
   a &{
     color: $black;
     border: none;
@@ -65,11 +65,11 @@ h2{
 h3{
   @extend %small-headings;
   @include ktype(0,1,1);
+  font-weight: 700;
 }
 h4{
   @extend %small-headings;
   @include ktype(0,1,1);
-  font-weight: 500;
 }
 h5{
   @extend %small-headings;
@@ -81,7 +81,6 @@ h6{
   @extend %small-headings;
   @include ktype(-1,1,0);
   text-transform: uppercase;
-  font-weight: 500;
 }
 
 
