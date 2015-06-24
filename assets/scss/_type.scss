@@ -102,7 +102,7 @@ dd+dt{
 
 blockquote{
   margin: kunit(2) 0;
-  border-left: kunit(1/4) solid $gray-light;
+  border-left: kunit(1/4) solid $gray;
   padding-left: kunit(3/4);
   p{
     @include ktype(1,0,0);
@@ -121,7 +121,7 @@ pre,
 var,
 samp, 
 tt{
-  color: $gray-light;
+  color: $gray;
   background: #272822;
   font-family: $monospace;
   @include ktype(-2,0,0);
@@ -192,4 +192,19 @@ kbd{
   background: #f4f4f4;
   border-radius: 4px;
   box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 1px 0 0 #fff inset;
+}
+
+// Modifiers
+// -----------
+
+.meta{
+  color: $gray;
+  font-family: $sans;
+  text-transform: uppercase;
+  font-weight: 700;
+  span{
+    font-family: $serif;
+    font-style: italic;
+    font-weight: 100;
+  }
 }
