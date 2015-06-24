@@ -24,11 +24,11 @@ p{
 }
 
 a{
-  color: $highlight;
+  color: $primary;
   text-decoration: none;
   &:hover, &:focus{
     text-decoration: underline;
-    color: darken($highlight, 20%);
+    color: $gray-dark;
   }
 }
 
@@ -37,13 +37,12 @@ a{
 // ----------
 
 %headings{
-  // font-family: $sans;
 
   a &{
     color: $black;
     border: none;
     &:hover{
-      color: $highlight;
+      color: $primary;
     }
   }
   
@@ -57,21 +56,32 @@ h2{
   @extend %headings;
   @include ktype(1,1,0);
 }
-h3{
+
+%small-headings{
   @extend %headings;
-  @include ktype(1,2,1);
+  font-family: $sans;
+}
+
+h3{
+  @extend %small-headings;
+  @include ktype(0,1,1);
 }
 h4{
-  @extend %headings;
+  @extend %small-headings;
   @include ktype(0,1,1);
+  font-weight: 500;
 }
 h5{
-  @extend %headings;
-  @include ktype(0,1,1);
+  @extend %small-headings;
+  @include ktype(-1,1,1);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 h6{
-  @extend %headings;
-  @include ktype(0,2,-1);
+  @extend %small-headings;
+  @include ktype(-1,1,0);
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 
@@ -158,12 +168,12 @@ address{
 }
 
 abbr, acronym{
-  border-bottom: 1px dotted $highlight;
+  border-bottom: 1px dotted $primary;
   cursor: help;
 }
 
 mark, ins{
-  background: #fefe32;
+  background: #fef0c3;
   text-decoration: none;
 }
 
