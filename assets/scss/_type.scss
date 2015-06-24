@@ -27,8 +27,8 @@ a{
   color: $primary;
   text-decoration: none;
   &:hover, &:focus{
-    text-decoration: underline;
     color: $gray-dark;
+    border-bottom: 1px solid $gray;
   }
 }
 
@@ -41,8 +41,9 @@ a{
   a &{
     color: $black;
     border: none;
-    &:hover{
+    &:hover, &:focus{
       color: $primary;
+      text-decoration: none;
     }
   }
   
@@ -215,5 +216,8 @@ kbd{
     font-family: $serif;
     font-style: italic;
     font-weight: 100;
+  }
+  a{
+    color: darken($gray, 10%);
   }
 }
