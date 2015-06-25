@@ -131,10 +131,11 @@ pre,
 var,
 samp, 
 tt{
-  color: $gray;
-  background: #272822;
+  color: $gray-dark;
+  background: $primary-light;
   font-family: $monospace;
-  @include ktype(-2,0,0);
+  font-size: 0.8rem;
+  line-height: 1;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -148,11 +149,12 @@ tt{
 }
 
 code, var, samp, tt{
-  padding: 2px 4px;
+  padding: 4px 4px 2px 4px;
+  display: inline-block;
 }
 
 pre{
-  padding: kunit(1);
+  padding: kunit(0);
 }
 
 
@@ -173,7 +175,7 @@ abbr, acronym{
 }
 
 mark, ins, ::selection{
-  background: #fef0c3;
+  background: $primary-light;
   text-decoration: none;
 }
 
