@@ -172,7 +172,7 @@ abbr, acronym{
   cursor: help;
 }
 
-mark, ins{
+mark, ins, ::selection{
   background: #fef0c3;
   text-decoration: none;
 }
