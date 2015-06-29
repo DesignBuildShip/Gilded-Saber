@@ -17,6 +17,7 @@ body{
   font-family: $serif;
   color: $black;
   font-weight: 300;
+  background-color: #fcfcfd;
 }
 
 p{
@@ -24,11 +25,11 @@ p{
 }
 
 a{
-  color: $highlight;
+  color: $primary;
   text-decoration: none;
   &:hover, &:focus{
-    text-decoration: underline;
-    color: darken($highlight, 20%);
+    color: $gray-dark;
+    border-bottom: 1px solid $gray;
   }
 }
 
@@ -37,13 +38,13 @@ a{
 // ----------
 
 %headings{
-  font-family: $sans;
-
+  font-weight: 500;
   a &{
     color: $black;
     border: none;
-    &:hover{
-      color: $highlight;
+    &:hover, &:focus{
+      color: $primary;
+      text-decoration: none;
     }
   }
   
@@ -51,27 +52,37 @@ a{
 
 h1{
   @extend %headings;
-  @include ktype(6,1,1);
+  @include ktype(3,1,0);
 }
 h2{
   @extend %headings;
-  @include ktype(5,2,1);
+  @include ktype(1,2,0);
 }
-h3{
+
+%small-headings{
   @extend %headings;
-  @include ktype(4,2,1);
+  font-family: $sans;
+}
+
+h3{
+  @extend %small-headings;
+  @include ktype(0,2,1);
+  font-weight: 700;
 }
 h4{
-  @extend %headings;
-  @include ktype(3,2,1);
+  @extend %small-headings;
+  @include ktype(0,2,1);
 }
 h5{
-  @extend %headings;
-  @include ktype(1,2,1);
+  @extend %small-headings;
+  @include ktype(-1,1,1);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 h6{
-  @extend %headings;
-  @include ktype(0,2,-1);
+  @extend %small-headings;
+  @include ktype(-1,1,0);
+  text-transform: uppercase;
 }
 
 
@@ -101,14 +112,37 @@ dd+dt{
 // --------
 
 blockquote{
-  margin: kunit(2) 0;
-  border-left: kunit(1/4) solid $gray-light;
-  padding-left: kunit(3/4);
+  margin: 0;
+  padding: kunit(1);
+  text-align: center;
+  font-weight: 500;
   p{
-    @include ktype(1,0,0);
+    margin: 0;
+    font-size: 26px;
     + p{
       margin-top: kunit(1);
     }
+  }
+  cite{
+    display: block;
+    color: $primary;
+    @include ktype(0,1,0);
+    &:before{
+      content: "— "
+    }
+  }
+  &:before,
+  &:after{
+    display: block;
+    @include ktype(2,0,0);
+    color: $primary;
+  }
+  &:before{
+    content: "“"
+  }
+  &:after{
+    margin: kunit(1) 0 kunit(-1) 0;
+    content: "”"
   }
 }
 
@@ -121,10 +155,11 @@ pre,
 var,
 samp, 
 tt{
-  color: $gray-light;
-  background: #272822;
+  color: $gray-dark;
+  background: $primary-light;
   font-family: $monospace;
-  @include ktype(-2,0,0);
+  font-size: 0.8rem;
+  line-height: 1;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -138,11 +173,12 @@ tt{
 }
 
 code, var, samp, tt{
-  padding: 2px 4px;
+  padding: 4px 4px 2px 4px;
+  display: inline-block;
 }
 
 pre{
-  padding: kunit(1);
+  padding: kunit(0);
 }
 
 
@@ -158,12 +194,12 @@ address{
 }
 
 abbr, acronym{
-  border-bottom: 1px dotted $highlight;
+  border-bottom: 1px dotted $primary;
   cursor: help;
 }
 
-mark, ins{
-  background: #fefe32;
+mark, ins, ::selection{
+  background: $primary-light;
   text-decoration: none;
 }
 
@@ -192,4 +228,22 @@ kbd{
   background: #f4f4f4;
   border-radius: 4px;
   box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 1px 0 0 #fff inset;
+}
+
+// Modifiers
+// -----------
+
+.meta{
+  color: $gray;
+  font-family: $sans;
+  text-transform: uppercase;
+  font-weight: 700;
+  span{
+    font-family: $serif;
+    font-style: italic;
+    font-weight: 100;
+  }
+  a{
+    color: darken($gray, 10%);
+  }
 }

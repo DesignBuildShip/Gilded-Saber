@@ -9,7 +9,9 @@ img{
 
 hr{
   height: 0;
-  border: 2px solid $gray-light;
+  border: 0;
+  border-bottom: 1px solid $gray;
+  padding-top: 1px;
   margin: kunit(2) 0;
 }
 
