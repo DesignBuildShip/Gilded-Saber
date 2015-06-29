@@ -1,7 +1,11 @@
 // Index (post list) Styles
 // ==========================
 
-.index{
+.index, .home-template{
+
+  .posts-list{
+    margin: kunit(2) 0;
+  }
 
   .post{
   
