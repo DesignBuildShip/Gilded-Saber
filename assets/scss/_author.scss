@@ -1,2 +1,25 @@
 // Author Page Styles
 // ====================
+
+.author{}
+
+.post-author{
+  border: 1px solid $primary;
+  padding: kunit(1);
+  margin-top: kunit(4);
+  margin-bottom: kunit(2);
+  .author-image{
+    max-height: kunit(5);
+  }
+  .author-name{
+    margin: 0;
+  }
+  .author-bio, .author-website, .author-more{
+    @include ktype(0,0,0);
+    margin: 0;
+  }
+
+  .author-more{
+    white-space: nowrap;
+  }
+}
