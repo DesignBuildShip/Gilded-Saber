@@ -3,47 +3,33 @@
 <main role="main">
   
   {{#tag}}
+
   <header class="tag-header">
-    {{#if image}}
-      <img src="{{image}}" alt="{{name}} cover image"/>
-    {{/if}}
-    <h1>Tag: {{name}}</h1>
+
+    <h1>All posts on <em>{{name}}</em></h1>
     <p class="tag-description">{{description}}</p>
+
   </header>
+
   {{/tag}}
   
   <hr>
 
+  <section class="posts-list">
   {{#foreach posts}}
 
     <article role="article" class="{{post_class}}">
 
-      <header class="post-header">
+      <a href="{{url}}"><h1>{{title}}</h1></a>
 
-        <a href="{{url}}">
-          <h1 class="post-title">{{title}}</h1>
-        </a>
-
-        <aside class="post-meta">
-          {{tags}}
-          <p>Written by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}} on <time class="post-date">{{date format='MMMM DD, YYYY'}}</time></p>
-        </aside>
-
-      </header>
-      
-      {{#if image}}
-        <figure class="post-image">
-          {{image}}
-        </figure>
-      {{/if}}
-
-      <section class="post-content">
-        {{excerpt words="50"}} <a href="{{url}}" class="read-more no-wrap">Read More »</a>
-      </section>
+      <aside class="post-meta">
+        <p class="meta">Published <span><time class="post-date">{{date format='MMMM DD, YYYY'}}</time></span> by <span>{{#author}}<a href="{{url}}">{{name}}</a>{{/author}}</span> on <span>{{tags}}</span></p>
+      </aside>
 
     </article>
 
   {{/foreach}}
+  </section>  
   
   {{pagination}}
   
