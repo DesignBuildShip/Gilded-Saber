@@ -11,7 +11,7 @@
 }
 
 .post-title{
-  margin-top: 0;
+  @include ktype(3,0,0);
 
   // Fix extra long unbreaking titles like 'antidisestablishmentarianism'
   -ms-word-wrap: break-word;
@@ -23,9 +23,18 @@
 }
 
 .post-header{
-
+  margin-bottom: kunit(2);
 }
 
 .post-content{
-
+  > p:first-of-type{
+    &::first-line{
+      // font-family: $sans;
+      display: inline-block;
+      @include ktype(1,0,0);
+      line-height: 30px;
+      line-height: 1.42857rem;
+      text-transform: uppercase;
+    }
+  }
 }

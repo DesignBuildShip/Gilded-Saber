@@ -8,13 +8,10 @@
 
       <header class="post-header">
 
-        <a href="{{url}}">
-          <h1 class="post-title">{{title}}</h1>
-        </a>
+        <a href="{{url}}"><h1 class="post-title">{{title}}</h1></a>
 
         <aside class="post-meta">
-          {{tags}}
-          <p>Written by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}} on <time class="post-date">{{date format='MMMM DD, YYYY'}}</time></p>
+          <p class="meta">Published <span><time class="post-date">{{date format='MMMM DD, YYYY'}}</time></span> by <span>{{#author}}<a href="{{url}}">{{name}}</a>{{/author}}</span> on <span>{{tags}}</span></p>
         </aside>
 
       </header>

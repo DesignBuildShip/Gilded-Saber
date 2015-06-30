@@ -4,15 +4,25 @@
 .index, .home-template{
 
   .posts-list{
-    margin: kunit(2) 0;
+    margin-bottom: kunit(2);
   }
 
   .post{
-  
+    margin-bottom: kunit(2);
+    h1{
+      margin: 0;
+    }
   }
   
   .featured{ // Added by Ghost if featured
-   
+    &:before{
+      content: "FEATURED";
+      color: $primary;
+      display: block;
+      font-family: $sans;
+      font-weight: 500;
+      @include ktype(-1,0,0);
+    }
   }
   
 }
