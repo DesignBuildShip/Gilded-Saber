@@ -9,7 +9,7 @@
   } 
 }
 
-.post-title{
+.page-title{ // used outside of #post
   @include ktype(3,0,0);
 
   // Fix extra long unbreaking titles like 'antidisestablishmentarianism'

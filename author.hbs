@@ -3,55 +3,41 @@
 <main role="main">
   
   {{#author}}
-  <header class="author-header">
-    {{#if image}}
-      <img src="{{image}}" alt="{{name}} cover image"/>
-    {{/if}}
+  <header>
 
-    <h1>{{name}}</h1>
+      <h1>Author spotlight: {{name}}</h1>
 
-    {{#if bio}}
-      <p class="author-bio">{{bio}}</p>
-    {{/if}}
+      {{#if bio}}
+        <p class="author-bio">{{bio}}</p>
+      {{/if}}
 
-    {{#if website}}
-      <p class="author-website">Learn more about {{name}} at {{website}}</p>
-    {{/if}}
+      {{#if website}}
+        <p class="author-website">You can learn more about what {{name}} does at <a href="{{website}}">{{website}}</a></p>
+      {{/if}}
+    
   </header>
-  {{/author}}
-  
+
   <hr>
 
+  <h5>All posts by {{name}}:</h5>
+  <br>
+  {{/author}}
+
+  <section class="posts-list">
   {{#foreach posts}}
 
     <article role="article" class="{{post_class}}">
 
-      <header class="post-header">
+      <a href="{{url}}"><h1>{{title}}</h1></a>
 
-        <a href="{{url}}">
-          <h1 class="post-title">{{title}}</h1>
-        </a>
-
-        <aside class="post-meta">
-          {{tags}}
-          <p>Written by <a href="{{author.url}}">{{author.name}}</a> on <time class="post-date">{{date format='MMMM DD, YYYY'}}</time></p>
-        </aside>
-
-      </header>
-      
-      {{#if image}}
-        <figure class="post-image">
-          {{image}}
-        </figure>
-      {{/if}}
-
-      <section class="post-content">
-        {{content words="100"}} <a href="{{url}}" class="read-more">Read More »</a>
-      </section>
+      <aside class="post-meta">
+        <p class="meta">Published <span><time class="post-date">{{date format='MMMM DD, YYYY'}}</time></span> by <span>{{#author}}<a href="{{url}}">{{name}}</a>{{/author}}</span> on <span>{{tags}}</span></p>
+      </aside>
 
     </article>
 
   {{/foreach}}
+  </section>  
   
   {{pagination}}
   

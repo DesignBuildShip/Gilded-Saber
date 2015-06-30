@@ -8,7 +8,7 @@
 
       <header class="post-header">
 
-        <a href="{{url}}"><h1 class="post-title">{{title}}</h1></a>
+        <a href="{{url}}"><h1 class="page-title">{{title}}</h1></a>
 
         <aside class="post-meta">
           <p class="meta">Published <span><time class="post-date">{{date format='MMMM DD, YYYY'}}</time></span> by <span>{{#author}}<a href="{{url}}">{{name}}</a>{{/author}}</span> on <span>{{tags}}</span></p>
@@ -28,7 +28,7 @@
 
     </article>
     
-    <aside class="post-author media">
+    <aside class="author media">
       {{#author}}
 
         {{#if image}}
@@ -41,12 +41,6 @@
           {{#if bio}}
             <p class="author-bio">{{bio}} <span class="author-more"><a href="{{url}}">See more articles by {{name}} »</a></span></p>
           {{/if}}
-
-        {{!--
-          {{#if website}}
-             <p class="author-website">You can learn more about what {{name}} does at <a href="{{website}}">{{website}}</a></p>
-          {{/if}}
-         --}}
 
         </div>
       {{/author}}

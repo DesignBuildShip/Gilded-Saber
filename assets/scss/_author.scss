@@ -1,9 +1,11 @@
 // Author Page Styles
 // ====================
 
-.author{}
+.template-author{
+  .author{}
+}
 
-.post-author{
+.author{
   border: 1px solid $primary;
   box-shadow: 0px 2px 1px  rgba(0,0,0,0.10);
   padding: kunit(1);
