@@ -15,7 +15,7 @@ html{
 body{ 
   @include kbody();
   font-family: $serif;
-  color: $black;
+  color: $gray-dark;
   font-weight: 300;
   background-color: #fcfcfd;
 }
@@ -27,9 +27,11 @@ p{
 a{
   color: $primary;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 300ms ease, border-color 300ms ease;
   &:hover, &:focus{
     color: $gray-dark;
-    border-bottom: 1px solid $gray;
+    border-color: $gray;
   }
 }
 
@@ -38,21 +40,20 @@ a{
 // ----------
 
 %headings{
+  color: $black;
   font-weight: 500;
-  a &{
+  a &, & a{
     color: $black;
-    border: none;
     &:hover, &:focus{
       color: $primary;
-      text-decoration: none;
+      border-color: transparent;
     }
   }
-  
 }
 
 h1{
   @extend %headings;
-  @include ktype(3,1,0);
+  @include ktype(2,1,0);
 }
 h2{
   @extend %headings;
@@ -234,16 +235,18 @@ kbd{
 // -----------
 
 .meta{
+  font-family: $serif;
+  font-style: italic;
   color: $gray;
-  font-family: $sans;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 100;
+  @include ktype(0,0,0);
   span{
-    font-family: $serif;
-    font-style: italic;
-    font-weight: 100;
+    font-family: $sans;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
   }
   a{
-    color: darken($gray, 10%);
+    color: inherit;
   }
 }

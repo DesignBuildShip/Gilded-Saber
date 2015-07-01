@@ -3,7 +3,7 @@
 
   @media screen and (min-width: $small){
     padding-top: kunit(1);
-    padding-bottom: kunit(2);
+    padding-bottom: kunit(4);
   }
   
 }
@@ -45,12 +45,12 @@
 }
 
 .site-footer{
-  border-top: 1px solid $gray;
+  color: $gray;
   padding: kunit(1) 0;
   margin-top: kunit(1);
 
   .copyright{
-    @include ktype(0,0,0);
+    @include ktype(-1,0,0);
   }
 
 }

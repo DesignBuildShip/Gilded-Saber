@@ -2,16 +2,15 @@
 // =======
 
 .post{ // Class added by Ghost
-  margin: kunit(4) 0;
+  margin: kunit(1) 0;
 
   img{
     margin: kunit(1) auto;
-  }
-  
+  } 
 }
 
-.post-title{
-  margin-top: 0;
+.page-title{ // used outside of #post
+  @include ktype(3,0,0);
 
   // Fix extra long unbreaking titles like 'antidisestablishmentarianism'
   -ms-word-wrap: break-word;
@@ -23,9 +22,18 @@
 }
 
 .post-header{
-
+  margin-bottom: kunit(2);
 }
 
 .post-content{
-
+  > p:first-of-type{
+    &::first-line{
+      // font-family: $sans;
+      display: inline-block;
+      @include ktype(1,0,0);
+      line-height: 30px;
+      line-height: 1.42857rem;
+      text-transform: uppercase;
+    }
+  }
 }

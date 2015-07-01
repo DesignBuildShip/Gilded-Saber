@@ -5,6 +5,10 @@ img{
   max-width: 100%;
   height: auto;
   display: block;
+  &.rounded{
+    border-radius: 50%;
+    background-clip: content-box;
+  }
 }
 
 hr{

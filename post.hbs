@@ -8,13 +8,10 @@
 
       <header class="post-header">
 
-        <a href="{{url}}">
-          <h1 class="post-title">{{title}}</h1>
-        </a>
+        <h1 class="page-title">{{title}}</h1>
 
         <aside class="post-meta">
-          {{tags}}
-          <p>Written by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}} on <time class="post-date">{{date format='MMMM DD, YYYY'}}</time></p>
+          <p class="meta">Published <span><time class="post-date">{{date format='MMMM DD, YYYY'}}</time></span> by <span>{{#author}}<a href="{{url}}">{{name}}</a>{{/author}}</span> on <span>{{tags}}</span></p>
         </aside>
 
       </header>
@@ -31,24 +28,21 @@
 
     </article>
     
-    <aside class="post-author">
+    <aside class="author media">
       {{#author}}
-        
-        <h3 class="author-name">About {{name}}</h3>
-        
+
         {{#if image}}
-          <img src="{{image}}" alt="A picture of {{name}}">
+          <img class="media-img author-image" src="{{image}}" alt="A picture of {{name}}">
         {{/if}}
 
-        {{#if bio}}
-          <p class="author-bio">{{bio}}</p>
-        {{/if}}
+        <div class="media-body">
+          <h5 class="author-name">About {{name}}</h5>
 
-        {{#if website}}
-          <p class="author-website">Learn more about {{name}} at {{website}}</p>
-        {{/if}}
+          {{#if bio}}
+            <p class="author-bio">{{bio}} <span class="author-more"><a href="{{url}}">See more articles by {{name}} »</a></span></p>
+          {{/if}}
 
-        <p><a href="{{url}}">See all articles by {{name}}</a></p>
+        </div>
       {{/author}}
     </aside>
 
