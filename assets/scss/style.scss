@@ -47,7 +47,8 @@
 //
 // Larger patterns that appear independent of page type
 
-@import 'site';   // Site wide components (header/footer)
+@import 'site';       // Site wide components (header/footer)
+@import 'pagination'; // Pagination buttons and layout
 
 
 // Specifics
