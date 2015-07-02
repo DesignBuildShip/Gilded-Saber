@@ -1,60 +1,97 @@
 // Forms
 // =======
 
+form{
+  @extend %type-max;
+}
+
 %form-control{
-  @include ktype(1,0,0);
-  font-family: $sans;
-  padding: kunit(1)/2;
+  @extend %type-max;
+  @include ktype(0,0,0);
   border-width: 1px;
+  font-family: $sans;
   border-style: solid;
   transition: border-color 300ms;
+  margin-bottom: kunit(1/2);
   &:focus, &:active{
     outline: 0;
   }
 }
 
-input, textarea{
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+textarea{
   @extend %form-control;
   border-color: $gray;
   outline: 0;
   width: 100%;
   color: $black;
+  display: block;
+  box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.28);
+  border-radius: 3px;
+  max-width: 100%;
+  padding: kunit(1/4);
   &:hover{
     border-color: $gray-dark;
   }
   &:focus, &:active{
     outline: 0;
-    border-color: $highlight;
+    border-color: $primary;
   }
   &:disabled{
-    background:$gray-light;
+    background:$gray;
   }
 }
 
+textarea{
+  font-family: $serif;
+}
+
+label + %form-control{
+  margin-top: 0;
+}
 
 // Buttons
 // ---------
 
-button, .button, [type="submit"], [type="reset"], [type="button"]{
+button, 
+.button, 
+[type="submit"], 
+[type="reset"], 
+[type="button"]{
   @extend %form-control;
   width: auto;
   color: $white;
   background: $gray;
-  font-weight: bold;
-  transition: border-color 300ms, background 300ms;
-  &:hover{
-    border-color: $black-t;
+  transition: box-shadow 300ms, background 300ms;
+  box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.11);
+  border-radius: 3px;
+  padding: kunit(1/4) kunit(1/2);
+  &:hover, &:focus {
+    background-color: $black;
   }
-  &:focus, &:active{
+  &:active{
     outline: 0;
-    border-color: $black;
     background:$black;
   }
 }
 
 [type="submit"], .button-brand{
-  border-color: $highlight;
-  background: $highlight;
+  border-color: $primary;
+  background: $primary;
+  &:hover, &:focus {
+    background-color: darken($primary, 10%);
+  }
 }
 
 [type="reset"], .button-error{
@@ -63,10 +100,20 @@ button, .button, [type="submit"], [type="reset"], [type="button"]{
 }
 
 
-// Labels
-// --------
+// Labels & Legends
+// ------------------
 
 label{
-  @include ktype(0,1,1);
+  @include ktype(-1,1,1);
   display: block;
+  text-transform: uppercase;
+  font-family: $sans;
+  font-weight: 900;
+}
+
+legend{
+  font-family: $sans;
+  color: $black;
+  @include ktype(0,0,0);
+  padding: 0 kunit(1/2);
 }

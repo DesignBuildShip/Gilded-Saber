@@ -3,11 +3,11 @@ table {
 }
 
 th{
-  background:$gray-light;
+  background:$gray;
 }
 
 td, th {
-  border: 1px solid $gray;
+  border: 1px solid $gray-dark;
   padding: kunit(1/2);
   text-align: left;
 }

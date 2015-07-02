@@ -13,30 +13,38 @@
 //
 ///
 
-.media{
-  display:block;
-  @include cf;
-}
+@media screen and (min-width: $small) {
+  .media{
+    display:block;
+    @include cf;
+  }
 
-.media-img{
-  float:left;
-  margin-right: kunit(1);
-}
+  .media-img{
+    float:left;
+    margin-right: kunit(1/2);
+    @media screen and (min-width: $medium) {
+      margin-right: kunit(1);
+    }
+  }
 
-.media-img-rev{
-  float:right;
-  margin-left: kunit(1);
-}
+  .media-img-rev{
+    float:right;
+    margin-left: kunit(1/2);
+    @media screen and (min-width: $medium) {
+      margin-left: kunit(1);
+    }
+  }
 
-.media-img img,
-.media-img-rev img{
-  display:block;
-}
+  .media-img img,
+  .media-img-rev img{
+    display:block;
+  }
 
-.media-body{
-  overflow:hidden;
-}
-.media-body,
-.media-body > :last-child{
-  margin-bottom:0;
+  .media-body{
+    overflow:hidden;
+  }
+  .media-body,
+  .media-body > :last-child{
+    margin-bottom:0;
+  }
 }

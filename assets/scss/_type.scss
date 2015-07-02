@@ -6,72 +6,91 @@
 // --------
 
 html{ 
-  @include khtml(); 
-  @media screen and (min-width: $x-large){
-    font-size: 120%;
+  font-size: 100%;
+  line-height: 1.414;
+  @media screen and (min-width: $medium) {
+    @include khtml();
   }
 }
 
 body{ 
   @include kbody();
   font-family: $serif;
-  color: $black;
+  color: $gray-dark;
   font-weight: 300;
+  background-color: #fcfcfd;
 }
 
 p{
-  @include ktype(0,1,1);
+  @include ktype(0,0,.75);
+  @extend %type-max;
+  hanging-punctuation: first;
 }
 
 a{
-  color: $highlight;
+  color: $primary;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  // transition: border-color 300ms ease;
   &:hover, &:focus{
-    text-decoration: underline;
-    color: darken($highlight, 20%);
+    color: $gray-dark;
+    border-color: $gray;
   }
 }
 
+%type-max{
+  max-width: 36rem;
+}
 
 // Headings
 // ----------
 
 %headings{
-  font-family: $sans;
-
-  a &{
+  color: $black;
+  font-weight: 500;
+  font-family: $headings;
+  a &, & a{
     color: $black;
-    border: none;
-    &:hover{
-      color: $highlight;
+    &:hover, &:focus{
+      color: $primary;
+      border-color: transparent;
     }
   }
-  
 }
 
 h1{
   @extend %headings;
-  @include ktype(6,1,1);
+  @include ktype(2,1,0);
 }
 h2{
   @extend %headings;
-  @include ktype(5,2,1);
-}
-h3{
-  @extend %headings;
-  @include ktype(4,2,1);
-}
-h4{
-  @extend %headings;
-  @include ktype(3,2,1);
-}
-h5{
-  @extend %headings;
   @include ktype(1,2,1);
 }
-h6{
+
+%small-headings{
   @extend %headings;
-  @include ktype(0,2,-1);
+  font-family: $sans;
+}
+
+h3{
+  @extend %small-headings;
+  @include ktype(0,2,1);
+  font-weight: 900;
+}
+h4{
+  @extend %small-headings;
+  @include ktype(0,2,1);
+}
+h5{
+  @extend %small-headings;
+  @include ktype(-1,1,1);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+h6{
+  @extend %small-headings;
+  @include ktype(-1,1,0);
+  text-transform: uppercase;
 }
 
 
@@ -80,6 +99,8 @@ h6{
 
 ol, ul{
   padding-left: kunit(1);
+  margin: kunit(2) 0;
+  @extend %type-max;
   ol, ul{
     @include ktype(0,0,0);
   }
@@ -101,14 +122,38 @@ dd+dt{
 // --------
 
 blockquote{
-  margin: kunit(2) 0;
-  border-left: kunit(1/4) solid $gray-light;
-  padding-left: kunit(3/4);
+  margin: kunit(2) auto;
+  font-weight: 500;
+  color: $black;
   p{
-    @include ktype(1,0,0);
+    margin: 0 auto;
+    @include ktype(0,0,0);
+    position: relative;
+    text-indent: -0.75em; 
     + p{
       margin-top: kunit(1);
     }
+    &:before,
+    &:after{
+      font-weight: 100;
+      color: $primary;
+    }
+    &:before{
+      content: "“ ";
+    }
+    &:after{
+      content: " ”";
+    }
+  }
+}
+
+cite{
+  @include ktype(0,-1,1);
+  text-align: center;
+  display: block;
+  color: $primary;
+  &:before{
+    content: "— "
   }
 }
 
@@ -121,10 +166,11 @@ pre,
 var,
 samp, 
 tt{
-  color: $gray-light;
-  background: #272822;
+  color: $gray-dark;
+  background: $primary-light;
   font-family: $monospace;
-  @include ktype(-2,0,0);
+  font-size: 0.8rem;
+  line-height: 1;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -138,11 +184,12 @@ tt{
 }
 
 code, var, samp, tt{
-  padding: 2px 4px;
+  padding: 4px 4px 2px 4px;
+  display: inline-block;
 }
 
 pre{
-  padding: kunit(1);
+  padding: kunit(0);
 }
 
 
@@ -158,12 +205,12 @@ address{
 }
 
 abbr, acronym{
-  border-bottom: 1px dotted $highlight;
+  border-bottom: 1px dotted $primary;
   cursor: help;
 }
 
-mark, ins{
-  background: #fefe32;
+mark, ins, ::selection{
+  background: $primary-light;
   text-decoration: none;
 }
 
@@ -192,4 +239,24 @@ kbd{
   background: #f4f4f4;
   border-radius: 4px;
   box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 1px 0 0 #fff inset;
+}
+
+// Modifiers
+// -----------
+
+.meta{
+  font-family: $serif;
+  font-style: italic;
+  color: $gray;
+  font-weight: 100;
+  @include ktype(0,0,0);
+  span{
+    font-family: $sans;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 900;
+  }
+  a{
+    color: inherit;
+  }
 }

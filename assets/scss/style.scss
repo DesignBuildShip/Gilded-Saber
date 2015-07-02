@@ -47,10 +47,8 @@
 //
 // Larger patterns that appear independent of page type
 
-@import 'site';   // Site wide components (header/footer)
-@import 'index';  // Post lists
-@import 'posts';  // Content
-@import 'author'; // Author
+@import 'site';       // Site wide components (header/footer)
+@import 'pagination'; // Pagination buttons and layout
 
 
 // Specifics
@@ -58,7 +56,9 @@
 //
 // Details and tweaks for specific locations.
 
-@import 'templates'; // Ghost generated body classes
+@import 'index';  // Post lists
+@import 'posts';  // Content
+@import 'author'; // Author
 
 
 // Utility

@@ -1,0 +1,19 @@
+.pagination{
+  text-align: center;
+
+  margin: kunit(4) 0;
+
+  .older-posts,
+  .newer-posts{
+    color: $gray;
+    font-style: italic;
+    padding: kunit(1/2);
+    margin: kunit(1/2);
+    border-radius: 30px;
+    border: 1px solid $gray;
+    &:hover, &:focus{
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+}

@@ -7,15 +7,15 @@
 // -------
 
 // Brand
-$primary: #3869d7;
+$primary: #E4C667;
+$primary-light: #fef0c3;
 $highlight:   #0076ff;
 $error: #f20;
 
 // Grayscale
-$black:       #121313;
-$gray-dark:   #575a5e;
-$gray:        #aeb4bb;
-$gray-light:  #ddd; 
+$black:       #4C4C4C;
+$gray-dark:   #7a7a7a;
+$gray:        #D1D1D1; 
 $white:       #fff;
 
 // Transparency
@@ -26,15 +26,16 @@ $black-t: rgba(18,19,19,0.55);
 // ------
 
 // Knife (Vertical Rhythm & Modular Scale calculator)
-$body-font-size:    16px;
-$body-line-height:  $perfect-fifth;
-$scale-factor:      $minor-third;
+$body-font-size:    21px;
+$body-line-height:  $augmented-fourth;
+$scale-factor:      $golden;
 $ie8compatability:  true;
 $outputrems:        true;
 
 // Fonts
-$sans:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$serif: Georgia, Times, "Times New Roman", serif;
+$sans:  "ff-dagny-web-pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$serif: "minion-pro-caption", "Minion pro", "Minion", Minion, Georgia, Times, "Times New Roman", serif;
+$headings: "minion-pro", "Minion pro", "Minion", Minion, Georgia, Times, "Times New Roman", serif;;
 $monospace: Consolas, Monaco, 'Andale Mono', monospace;
 
 
