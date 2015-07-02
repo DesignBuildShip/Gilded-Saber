@@ -99,6 +99,7 @@ h6{
 
 ol, ul{
   padding-left: kunit(1);
+  margin: kunit(2) 0;
   @extend %type-max;
   ol, ul{
     @include ktype(0,0,0);
