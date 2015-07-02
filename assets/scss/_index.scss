@@ -1,7 +1,11 @@
 // Index (post list) Styles
 // ==========================
 
-.index, .home-template{
+.index, 
+.home-template, 
+.archive-template,
+.author-template,
+.tag-template{
 
   .post{
     margin-bottom: kunit(2);
