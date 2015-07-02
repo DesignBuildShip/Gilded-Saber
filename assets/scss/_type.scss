@@ -6,9 +6,11 @@
 // --------
 
 html{ 
-  @include khtml();
-  font-size: 110%;
+  font-size: 100%;
   line-height: 1.414;
+  @media screen and (min-width: $medium) {
+    @include khtml();
+  }
 }
 
 body{ 
@@ -20,7 +22,9 @@ body{
 }
 
 p{
-  @include ktype(0,1,1);
+  @include ktype(0,0,.75);
+  @extend %type-max;
+  hanging-punctuation: first;
 }
 
 a{
@@ -34,6 +38,9 @@ a{
   }
 }
 
+%type-max{
+  max-width: 36rem;
+}
 
 // Headings
 // ----------
@@ -41,6 +48,7 @@ a{
 %headings{
   color: $black;
   font-weight: 500;
+  font-family: $headings;
   a &, & a{
     color: $black;
     &:hover, &:focus{
@@ -56,7 +64,7 @@ h1{
 }
 h2{
   @extend %headings;
-  @include ktype(1,2,0);
+  @include ktype(1,2,1);
 }
 
 %small-headings{
@@ -91,6 +99,7 @@ h6{
 
 ol, ul{
   padding-left: kunit(1);
+  @extend %type-max;
   ol, ul{
     @include ktype(0,0,0);
   }
@@ -112,15 +121,27 @@ dd+dt{
 // --------
 
 blockquote{
-  margin: 0;
-  padding: kunit(1);
-  text-align: center;
+  margin: kunit(2) auto;
   font-weight: 500;
+  color: $black;
   p{
-    margin: 0;
-    font-size: 26px;
+    margin: 0 auto;
+    @include ktype(0,0,0);
+    position: relative;
+    text-indent: -0.75em; 
     + p{
       margin-top: kunit(1);
+    }
+    &:before,
+    &:after{
+      font-weight: 100;
+      color: $primary;
+    }
+    &:before{
+      content: "“ ";
+    }
+    &:after{
+      content: " ”";
     }
   }
   cite{
@@ -130,19 +151,6 @@ blockquote{
     &:before{
       content: "— "
     }
-  }
-  &:before,
-  &:after{
-    display: block;
-    @include ktype(2,0,0);
-    color: $primary;
-  }
-  &:before{
-    content: "“"
-  }
-  &:after{
-    margin: kunit(1) 0 kunit(-1) 0;
-    content: "”"
   }
 }
 

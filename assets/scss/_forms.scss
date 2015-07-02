@@ -2,10 +2,11 @@
 // =======
 
 form{
-  margin: 0 auto;
+  @extend %type-max;
 }
 
 %form-control{
+  @extend %type-max;
   @include ktype(0,0,0);
   border-width: 1px;
   font-family: $sans;

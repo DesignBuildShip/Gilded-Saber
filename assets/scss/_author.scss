@@ -7,6 +7,7 @@
   padding: kunit(1);
   margin-top: kunit(4);
   margin-bottom: kunit(2);
+  @extend %type-max;
   .author-image{
     max-height: kunit(5);
   }

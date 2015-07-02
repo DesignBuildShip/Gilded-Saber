@@ -7,4 +7,7 @@
   // Start fitvids
   $(".container").fitVids();
 
+  //unwrap images
+  $('img').unwrap('p');
+
 })(jQuery);

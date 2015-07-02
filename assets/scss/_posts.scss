@@ -5,12 +5,12 @@
   margin: kunit(1) 0;
 
   img{
-    margin: kunit(1) auto;
+    margin: kunit(1) 0;
   } 
 }
 
 .page-title{ // used outside of #post
-  @include ktype(3,0,0);
+  @include ktype(2,0,0);
 
   // Fix extra long unbreaking titles like 'antidisestablishmentarianism'
   -ms-word-wrap: break-word;
