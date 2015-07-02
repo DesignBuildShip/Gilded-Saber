@@ -5,6 +5,7 @@ img{
   max-width: 100%;
   height: auto;
   display: block;
+  margin-left: 0;
   &.rounded{
     border-radius: 50%;
     background-clip: content-box;
@@ -17,15 +18,19 @@ hr{
   border-bottom: 1px solid $gray;
   padding-top: 1px;
   margin: kunit(2) 0;
+  @extend %type-max;
 }
 
-embed, iframe, .fluid-width-video-wrapper{
+embed, iframe{
   margin: kunit(1) 0;
+  @extend %type-max;
 }
 
 // Account for fitvid
 .fluid-width-video-wrapper{
+  margin: kunit(1) 0;
   iframe{
     margin: 0;
+    max-width: 100%;
   }
 }
