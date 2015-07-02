@@ -6,10 +6,9 @@
 // --------
 
 html{ 
-  @include khtml(); 
-  @media screen and (min-width: $x-large){
-    font-size: 120%;
-  }
+  @include khtml();
+  font-size: 110%;
+  line-height: 1.414;
 }
 
 body{ 
