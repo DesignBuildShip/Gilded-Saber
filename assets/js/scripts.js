@@ -9,6 +9,6 @@
 
   //unwraps
   $('p > img').unwrap();
-  $('p > cite').unwrap();
+  $('blockquote + p > cite').unwrap();
 
 })(jQuery);
