@@ -8,6 +8,6 @@
   $(".container").fitVids();
 
   //unwrap images
-  $('img').unwrap('p');
+  $('p > img').unwrap('p');
 
 })(jQuery);
