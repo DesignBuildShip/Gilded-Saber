@@ -145,13 +145,15 @@ blockquote{
       content: " ”";
     }
   }
-  cite{
-    display: block;
-    color: $primary;
-    @include ktype(0,1,0);
-    &:before{
-      content: "— "
-    }
+}
+
+cite{
+  @include ktype(0,-1,1);
+  text-align: center;
+  display: block;
+  color: $primary;
+  &:before{
+    content: "— "
   }
 }
 
