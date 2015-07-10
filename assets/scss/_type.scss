@@ -38,10 +38,6 @@ a{
   }
 }
 
-%type-max{
-  max-width: 36rem;
-}
-
 // Headings
 // ----------
 
@@ -75,7 +71,7 @@ h2{
 h3{
   @extend %small-headings;
   @include ktype(0,2,1);
-  font-weight: 900;
+  font-weight: 500;
 }
 h4{
   @extend %small-headings;
@@ -85,7 +81,7 @@ h5{
   @extend %small-headings;
   @include ktype(-1,1,1);
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 500;
 }
 h6{
   @extend %small-headings;
@@ -254,7 +250,7 @@ kbd{
     font-family: $sans;
     text-transform: uppercase;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 500;
   }
   a{
     color: inherit;
