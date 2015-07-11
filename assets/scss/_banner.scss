@@ -12,9 +12,6 @@
     line-height: 1.2;
     font-family: $sans;
     font-weight: 500;
-  }
-
-  .form-copy{
     text-align: center;
   }
 
@@ -50,8 +47,10 @@
       float: left;
     }
     .form-copy{
-      text-align: left;
       padding-right: kunit(1);
+    }
+    .form-headline{
+      text-align: left;
     }
   }
   @media screen and (min-width: $large) {
