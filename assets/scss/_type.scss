@@ -25,6 +25,10 @@ p{
   @include ktype(0,0,.75);
   @extend %type-max;
   hanging-punctuation: first;
+  &.lead{
+    @include ktype(1,0,1);
+    line-height: 1.414rem;
+  }
 }
 
 a{
