@@ -4,12 +4,18 @@
   padding: kunit(1/2) 0;
   color: $white;
   background-color: $primary;
-  box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.24);
 
 
   .form-headline{
-    text-align: center;
     @include ktype(1,0,1);
+    line-height: 1.2;
+    font-family: $sans;
+    font-weight: 500;
+  }
+
+  .form-copy{
+    text-align: center;
   }
 
   form{
@@ -28,7 +34,7 @@
   }
 
   input[type="submit"]{
-    margin-top: kunit(1);
+    margin-top: kunit(1/2);
     margin-bottom: 0;
     display: inline-block;
     text-align: right;
@@ -39,18 +45,23 @@
   }
 
   @media screen and (min-width: $small) {
-    .form-headline, form{
+    .form-copy, form{
       width: 50%;
       float: left;
     }
-    .form-headline{
+    .form-copy{
       text-align: left;
+      padding-right: kunit(1);
     }
   }
   @media screen and (min-width: $large) {
-    .form-headline{
+    .form-copy{
       width: 100%;
     }
+    .form-headline{
+      margin-bottom: 0;
+    }
+
     form{
       width: 100%;
     }
@@ -63,6 +74,7 @@
       max-width: 16%;
       text-align: center;
       padding: kunit(1/4);
+      margin-top: kunit(1);
     }
   }
 
