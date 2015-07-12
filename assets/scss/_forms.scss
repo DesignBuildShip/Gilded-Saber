@@ -10,6 +10,7 @@ form{
   @include ktype(0,0,0);
   border-width: 1px;
   font-family: $sans;
+  font-weight: 400;
   border-style: solid;
   transition: border-color 300ms;
   margin-bottom: kunit(1/2);
@@ -32,7 +33,7 @@ input[type="time"],
 input[type="datetime"],
 textarea{
   @extend %form-control;
-  border-color: $gray;
+  border-color: rgba(0,0,0,0.28);
   outline: 0;
   width: 100%;
   color: $black;
@@ -70,9 +71,10 @@ button,
 [type="reset"], 
 [type="button"]{
   @extend %form-control;
+  border: 0; 
   width: auto;
   color: $white;
-  background: $gray;
+  background: $gray-dark;
   transition: box-shadow 300ms, background 300ms;
   box-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.11);
   border-radius: 3px;
@@ -86,7 +88,7 @@ button,
   }
 }
 
-[type="submit"], .button-brand{
+.button-brand{
   border-color: $primary;
   background: $primary;
   &:hover, &:focus {
@@ -94,7 +96,7 @@ button,
   }
 }
 
-[type="reset"], .button-error{
+.button-error{
   border-color: $error;
   background: $error;
 }
@@ -108,7 +110,7 @@ label{
   display: block;
   text-transform: uppercase;
   font-family: $sans;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 legend{

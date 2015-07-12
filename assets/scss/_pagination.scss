@@ -8,12 +8,18 @@
     color: $gray;
     font-style: italic;
     padding: kunit(1/2);
-    margin: kunit(1/2);
     border-radius: 30px;
     border: 1px solid $gray;
     &:hover, &:focus{
       color: $primary;
       border-color: $primary;
     }
+  }
+
+  .older-posts{
+    margin-right: kunit(1/2);
+  }
+  .newer-posts{
+    margin-left: kunit(1/2);
   }
 }

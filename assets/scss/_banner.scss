@@ -1,0 +1,80 @@
+.banner{
+  @include cf();
+  width: 100%;
+  padding: kunit(1/2) 0;
+  color: $white;
+  background-color: $primary;
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.24);
+
+
+  .form-headline{
+    @include ktype(1,0,1);
+    line-height: 1.2;
+    font-family: $sans;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  form{
+    @include cf();
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-control{
+    width: 100%;
+    input{
+      &:active, &:focus{
+        border-color: $black;
+      }
+    }
+  }
+
+  input[type="submit"]{
+    margin-top: kunit(1/2);
+    margin-bottom: 0;
+    display: inline-block;
+    text-align: right;
+  }
+
+  label{
+    margin: 0;
+  }
+
+  @media screen and (min-width: $small) {
+    .form-copy, form{
+      width: 50%;
+      float: left;
+    }
+    .form-copy{
+      padding-right: kunit(1);
+    }
+    .form-headline{
+      text-align: left;
+    }
+  }
+  @media screen and (min-width: $large) {
+    .form-copy{
+      width: 100%;
+    }
+    .form-headline{
+      margin-bottom: 0;
+    }
+
+    form{
+      width: 100%;
+    }
+    .form-control{
+      float: left;
+      width: 42%;
+      padding-right: kunit(1/2);
+    }
+    input[type="submit"]{
+      max-width: 16%;
+      text-align: center;
+      padding: kunit(1/4);
+      margin-top: kunit(1);
+    }
+  }
+
+}
