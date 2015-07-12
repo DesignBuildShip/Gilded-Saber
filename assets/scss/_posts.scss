@@ -3,10 +3,6 @@
 
 .post{ // Class added by Ghost
   margin: kunit(1) 0;
-
-  img{
-    margin: kunit(1) 0;
-  } 
 }
 
 .page-title{ // used outside of #post
@@ -26,5 +22,17 @@
 }
 
 .post-content{
+  
+  img{
+    margin: kunit(1) 0;
+  }
+  
+  > p{
+   @extend %type-max;
+  }
+
+  %type-max{
+    max-width: 30rem;
+  }
 
 }
