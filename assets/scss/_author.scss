@@ -7,7 +7,7 @@
   margin-top: kunit(4);
   margin-bottom: kunit(2);
   padding: kunit(1/2);
-  @extend %type-max;
+  max-width: 30rem;
   @media screen and (min-width: $medium) {
     padding: kunit(1);
   }
